@@ -1,0 +1,57 @@
+/**
+ * 创建于：2016-5-18
+ * 创建人：杨骐彰
+ * 说明： 面板组件样式
+ */
+@import "../../styles/variables";
+
+.sem-panel {
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  background-color: #fff;
+  position: relative;
+  //color: #000;
+
+  //头部
+  .sem-panel-header {
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    border-bottom: solid 1px $border-color;
+    font-weight: 600;
+    background-color: #FFE4AA ;
+    //文字居左
+    &.right-title {
+      text-align: right;
+    }
+
+    //文字居中
+    &.center-title {
+      text-align: center;
+    }
+  }
+
+  .sem-panel-body {
+    &.has-padding {
+      padding: 10px;
+    }
+    .table-wrapper{
+      overflow-x: scroll;
+    }
+    .table-need-head{
+      height: auto;
+      overflow-x: scroll;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .table-need-body{
+      margin-top: -33px;
+      position: relative;
+      overflow-x: scroll;
+      z-index: 1;
+    }
+    overflow: auto;
+  }
+}

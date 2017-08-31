@@ -1,0 +1,104 @@
+
+.bar-wrapper {
+  height: auto;
+  width: 100%;
+  font-size: 16px;
+  color: #434343;
+  .equipment{
+    width: 100%;
+    height: auto;
+    display: flex;
+    .equipment-left{
+      flex: 0 0 115px;
+      padding: 10px 0 0 20px;
+      font-size: 16px;
+
+    }
+
+    .no-device{
+      padding: 10px 0 0 36px ;
+      height: 23px;
+    }
+
+
+    .equipment-right{
+      position: relative;
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-flow: row wrap;
+      align-content: flex-start;
+      padding-left: 18px;
+      &.modal{
+        padding-left: 10px;
+        font-size: 14px;
+      }
+
+      .cover{
+        width: 20px;
+        height: 100%;
+        background-color: #ffffff;
+        z-index: 5;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+      }
+
+
+      .equipment-content{
+        height: 18px;
+        padding-left: 18px;
+        margin-top: 10px;
+        margin-right: 18px;
+        margin-bottom: 5px;
+        border-left: 1px solid #52caff;
+        &.modal{
+          padding:0;
+          margin: 0;
+          margin-top: 8px;
+          border: none;
+        }
+        &.valid{
+          background-color: #dfdfdf;
+        }
+        .equipment-content-width{
+          display: inline-block;
+          width: 100px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          vertical-align: middle;
+          &.modal{
+            width: 170px;
+            padding: 0;
+            margin: 0;
+            border: none;
+          }
+        }
+        .check-box{
+          margin-right: 13px;
+          vertical-align: middle;
+        }
+        .delete{
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          background-image: url('./icon_del.png');
+          background-size: cover;
+          margin-left: 14px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+
+  .bar-child{
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 16px;
+    height: auto;
+    width: 100%;
+  }
+}

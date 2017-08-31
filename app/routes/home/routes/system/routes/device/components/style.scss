@@ -1,0 +1,29 @@
+.sem-has-middle-bar{
+  .search{
+    .condition-search{
+      max-width:130px
+    }
+    td{
+      font-size: 14px;
+      padding: 4px 0;
+
+    }
+  }
+  .condition-button{
+    width: 100px;
+    height: 32px;
+    color: #ffffff;
+  }
+  &.list{
+    .sem-main-content{
+      border:1px solid#dfdfdf;
+    }
+    .sem-panel {
+      -webkit-border-radius: 5px 5px 0 0;
+      border-radius: 5px 5px 0 0;
+      background-color: #fff;
+      position: relative;
+      border: 0
+    }
+  }
+}

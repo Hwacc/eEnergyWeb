@@ -1,0 +1,13 @@
+.bar{
+  background-color: #d1d1d1;
+  width:80px;
+  height: 6px;
+  border-radius: 3px;
+  position: relative;
+  display: inline-block;
+  .progress{
+    background-color: #52caff;
+    height: 100%;
+
+  }
+}

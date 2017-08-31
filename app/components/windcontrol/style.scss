@@ -1,0 +1,27 @@
+.wind-control{
+  box-sizing: border-box;
+  border-bottom: 1px solid#dfdfdf;
+  .wind-speed{
+    height: 91px;
+    .word{
+      padding: 20px 0;
+      text-align: center;
+    }
+    .button-list{
+      text-align: center;
+      .wind-button{
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        margin-right: 13px;
+        cursor: pointer;
+      }
+      .wind-button:last-child{
+        margin: 0;
+      }
+    }
+  }
+}
+.wind-control:last-child{
+  border: 0;
+}

@@ -1,0 +1,132 @@
+.active{
+  z-index: 100;
+}
+.select-wrapper{
+  font-size: 12px;
+  position: relative;
+  width: 112px;
+  white-space: nowrap;
+  .block-div{
+    width: 100%;
+    height: 36px;
+  }
+}
+.select-wrapper.inline{
+  display: inline-block;
+  vertical-align: middle;
+}
+.select{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  border: 1px solid  #52caff;
+  border-radius: 4px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  .input{
+    position: relative;
+    padding: 8px 20px 8px 10px;
+    display: -webkit-box;
+    display: -moz-box;
+    label{
+      font-size: 12px;
+      color: #939393;
+      height: 17px;
+    }
+    .text{
+      border: 0;
+      height: 17px;
+      background-color: #ffffff;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      text-align: center;
+      margin-right: 10px;
+    }
+    .input:hover{
+      cursor: pointer;
+    }
+    input{
+      width: 100%;
+      border: 0;
+      height: 17px;
+      background-color: #ffffff;
+    }
+    input:focus{
+      border: none;
+    }
+    span{
+      position: absolute;
+      display: block;
+      right: 10px;
+      top: 13px;
+      background-image: url(./drop_icon.png);
+      height: 10px;
+      width: 10px;
+    }
+  }
+  .drop-down-group.display{
+    animation: slidedown 200ms;
+    display: block;
+    overflow: auto;
+    height: auto;
+    .pre-loader{
+      img{
+        width: 20px;
+      }
+
+    }
+  }
+  @-moz-keyframes slidedown /* Firefox */
+  {
+    0%   {transform: scale(0);}
+    100% {transform: scale(1);}
+  }
+
+  @-webkit-keyframes slidedown /* Safari 和 Chrome */
+  {
+    0%   {transform: scale(0);}
+    100% {transform: scale(1);}
+  }
+
+  @-o-keyframes slidedown /* Opera */
+  {
+    0%   {transform: scale(0);}
+    100% {transform: scale(1);}
+  }
+  @keyframes slidedown
+  {
+    0%   {transform: scale(0);}
+    100% {transform: scale(1);}
+  }
+  .drop-down-group{
+    display: none;
+    margin-bottom: 2px;
+    max-height: 300px;
+    overflow: hidden;
+    height: 0;
+    .option{
+      background-color: #ffffff;
+      height: 18px;;
+      padding: 6px 10px;
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .option.checked{
+      background-color: #52caff;
+      color: #ffffff;
+    }
+    .option.checked:hover{
+      background-color: #52caff;
+      color: #ffffff;
+    }
+    .option:hover{
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+  }
+}

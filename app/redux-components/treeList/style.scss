@@ -1,0 +1,96 @@
+$li-height:32px;
+$image-length :12px;
+$li-left:24px;
+.tree-list{
+  position: relative;
+/*  >li:first-child:before{
+    border:0
+  }
+  >li:first-child{
+    padding: 0;
+    margin: 0;
+  }*/
+  .tree-li-name{
+    display: inline-block;
+    color:#000000;
+    height: $li-height;
+    line-height: $li-height;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 70%;
+    .tree-li-img{
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      margin: 0 5px 4px 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      vertical-align: middle;
+      position: relative;
+      z-index: 2;
+    }
+    .select-img{
+      height: 12px;
+      width: 12px;
+      background-image: url('./icon_selected.png');
+      display: inline-block;
+      margin-left: 5px;
+    }
+    &.checked{
+      color: #52caff;
+      background-color: #e8f8ff;
+      border-radius: 10px;
+    }
+    &.isHaveChild{
+      margin-left: 14px;
+    }
+  }
+  li{
+    list-style: none;
+  }
+  .tree-li{
+    position: relative;
+    padding-left: $li-left;
+    -webkit-tap-highlight-color: #fff;
+  }
+/*  .tree-li:before{
+    content: ' ';
+    display: block;
+    width: $li-left+$image-length/2;
+    position: absolute;
+    top:$li-height/2;
+    left: -$image-length/2;
+    z-index: 1;
+  }*/
+  .tree-li-name:hover{
+    cursor: pointer;
+  }
+  .tree-li-img:hover{
+    cursor: pointer;
+  }
+  .tree-ul{
+    margin: 0 0;
+    padding: 0;
+    padding-left: $image-length;
+  }
+  ul{
+    position: relative;
+  }
+/*  ul:before{
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: -$li-height/2;
+    left: $image-length/2;
+  }
+  ul>li:last-child>ul:last-child:after{
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    top:-$li-height/2+1;
+    left: -($image-length/2+$li-left);
+    background: #ffffff;
+  }*/
+}

@@ -1,0 +1,64 @@
+.user{
+  .sem-has-middle-bar{
+    .search{
+      .condition-search{
+        max-width:130px
+      }
+      td{
+        font-size: 14px;
+        padding: 8px 0;
+
+      }
+    }
+    .condition-button{
+      width: 100px;
+      height: 32px;
+      color: #ffffff;
+    }
+    &.user{
+      .sem-main-content{
+        border:1px solid#dfdfdf;
+        .add-button-center{
+          position: absolute;
+          width: 230px;
+          top:50% ;
+          left:50%;
+          margin-left: -110px;
+          text-align: center;
+        }
+      }
+      .sem-panel {
+        -webkit-border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0;
+        background-color: #fff;
+        position: relative;
+        border: 0;
+      }
+    }
+
+  }
+  .r-sem-modal{
+    .sem-modal-content{
+      padding:16px 20px;
+      .sem-panel{
+        border:1px solid#dfdfdf;
+        box-sizing: border-box;
+        .sem-panel-header{
+          padding: 5px;
+          font-size: 14px;
+          font-weight: 300;
+          overflow: hidden;
+          height: 19px;
+          display: block;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: 402px;
+        }
+        .sem-panel-body>div{
+          padding: 10px;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}

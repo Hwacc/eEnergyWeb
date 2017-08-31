@@ -1,0 +1,27 @@
+
+.weather-wrapper{
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #52caff;
+  padding: 8px 0;
+  font-size: 36px;
+
+  .icon{
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 6px;
+  }
+  .name{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .unit{
+    font-size: 20px;
+    margin-left: 10px;
+  }
+}

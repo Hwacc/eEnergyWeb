@@ -1,0 +1,23 @@
+.container{
+  display: flex;
+  flex-wrap:wrap;
+  &.vertical{
+    flex-direction:column;
+  }
+  @for $i from 1 through 10 {
+    .col-#{$i} {
+      width: 10% * $i;
+      flex-grow:$i;
+      text-align: left;
+      min-width: 35px * $i;
+      position: relative;
+      &.center{
+        text-align: center;
+      }
+      &.right{
+        text-align: right;
+
+      }
+    }
+  }
+}

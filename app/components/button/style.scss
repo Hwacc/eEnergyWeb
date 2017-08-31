@@ -1,0 +1,74 @@
+/**
+ * 创建于：2016-5-23
+ * 创建人：杨骐彰
+ * 说明：按钮组件样式
+ */
+@import "../../styles/variables";
+
+.sem-button {
+  $color-primary: #52caff;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: $form-control-height;
+  text-align: center;
+  line-height: $form-control-height - 2px;
+  background-color: $color-primary;
+  border: solid 1px $color-primary;
+  padding: 0 16px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  vertical-align: middle;
+  outline: none;
+  font-size: 14px;
+  color: #ffffff;
+  //-webkit-transition: all .15s ease;
+  //transition: all .15s ease;
+
+  &.thin {
+    height: $form-control-height-thin;
+    line-height: $form-control-height-thin;
+    font-size: 12px;
+  }
+
+  &:hover {
+    background-color: darken($color-primary, 5%);
+    border-color: darken($color-primary, 5%);
+  }
+
+  &:active {
+    background-color: darken($color-primary, 10%);
+    border-color: darken($color-primary, 20%);
+  }
+
+  //空心button
+  &.outline {
+    background: #fff;
+    border-color: $color-primary;
+    color: #000;
+  }
+
+  &.outline {
+    &:hover {
+      color: darken($color-primary, 5%);
+    }
+
+    &:active {
+      color: darken($color-primary, 10%);
+    }
+  }
+
+  &.has-add-on {
+    position: relative;
+    padding-left: 30px;
+    .add-on {
+      position: absolute;
+      height: 16px;
+      width: 16px;
+      top: 50%;
+      margin-top: -8px;
+      left: 8px;
+      background-size: cover;
+    }
+  }
+}

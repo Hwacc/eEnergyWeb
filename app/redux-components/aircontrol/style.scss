@@ -1,0 +1,100 @@
+/**
+ * 创建于：2016-5-19
+ * 创建人：杨骐彰
+ * 说明： aircontrol组件样式
+ */
+@import "../../styles/variables";
+
+.sem-air-control {
+  color: #434343;
+  font-size: 16px;
+  border-radius: 5px;
+  border: solid 1px $border-color;
+  background-color: #ffffff;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  overflow-x: scroll;
+  flex-grow: 0;
+  .sem-air-control-title{
+    height: 42px;
+    font-size: 1em;
+    line-height: 42px;
+    text-align: center;
+    background-color:  #FFE4AA;
+  }
+  .sem-air-control-content{
+    width: 100%;
+    height: auto;
+    font-size: 0.875em;
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    //flex-flow: row wrap;
+    align-content: flex-start;
+    background-color: #ffffff;
+    .cover{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      z-index: 100;
+      background-color: #ffffff;
+    }
+    .content{
+      margin: 16px 0;
+      border-bottom: solid 1px #52caff;
+      .header{
+        position: relative;
+        display: flex;
+        .left{
+          height: 30px;
+          width: 30px;
+          margin-left: 10px;
+          background-image: url('./icon_area_ac.png');
+          background-size: cover;
+        }
+        .middle{
+          margin-left: 18px;
+          line-height: 30px;
+        }
+        .right{
+          position: absolute;
+          right: 0;
+          line-height: 30px;
+          color: #79e289;
+          &.close{
+            color: #fd8888
+          }
+        }
+      }
+    }
+
+      .body{
+      margin: 10px 0 10px 10px;
+    }
+
+    .footer{
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+      float: right;
+      margin-top: -10px;
+      .btn{
+        height: 30px;
+        line-height: 28px;
+        padding:0 5px;
+        margin-right: 8px;
+        &.little{
+          width: 62px;
+          height: 30px;
+          padding: 1px;
+        }
+        &.left{
+          margin-left: 0;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,95 @@
+/**
+ * 创建于：6/8/16
+ * 创建人：杨骐彰
+ */
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.r-sem-modal {
+  $radius: 4px;
+  $padding: 36px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: opacity .3s ease;
+  opacity: .3;
+  &.modal-show {
+    opacity: 1;
+    .sem-modal-body {
+      transform: translateX(-50%) translateY(-50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .sem-modal-body {
+    margin: 0 auto;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(1.2);
+    -ms-transform: translateX(-50%) translateY(-50%) scale(1.2);
+    transform: translateX(-50%) translateY(-50%) scale(1.2);
+    transition: transform .3s ease;
+    border-radius: $radius $radius 0 0;
+    box-sizing: border-box;
+  }
+
+  .sem-modal-header {
+    height: 40px;
+    line-height: 40px;
+    background-color: $color-primary;
+    border-radius: $radius $radius 0 0;
+    padding: 0 36px;
+    position: relative;
+    color:#ffffff;
+
+    &.center {
+      text-align: center;
+    }
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      cursor: pointer;
+      background-color: $color-primary;
+      -webkit-transition: transform .5s;
+      -ms-transition: transform .5s;
+      transition: transform .5s;
+
+      &:hover {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .sem-modal-content {
+    background-color: #fff;
+    padding: 16px $padding;
+    font-size: 12px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .sem-modal-footer {
+    text-align: center;
+    background-color: #fff;
+    @include clear-fix;
+    .sem-button {
+      &:not(:last-of-type) {
+        margin-right: 45px;
+      }
+      min-width: 100px;
+    }
+    padding:1px 36px 20px 36px;
+    margin-top: -1px;
+  }
+}

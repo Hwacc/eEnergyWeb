@@ -1,0 +1,31 @@
+.check-item {
+  background-color: #ffffff;
+  color: #000;
+  display: -webkit-box;
+  display: -moz-box;
+  border-bottom: 1px solid #dfdfdf;
+  box-sizing: border-box;
+  height: 37px; }
+  .check-item .image {
+    width: 17px;
+    height: 17px;
+    margin-right: 12px;
+    margin-top: 9px;
+    margin-left: 12px; }
+  .check-item .word {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    margin-top: 9px; }
+
+.check-item:hover {
+  background-color: #dfdfdf;
+  cursor: pointer; }
+
+.check-item.checked {
+  background-color: #a8e4ff;
+  color: #ffffff; }
+
+.check-item.checked:hover {
+  color: #dfdfdf; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,314 @@
+/**
+ * 创建于：6/6/16
+ * 创建人：杨骐彰
+ */
+@import "../../styles/variables";
+
+.sem-datepicker {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  vertical-align: middle;
+  width: 160px;
+  box-sizing: border-box;
+  border: solid 1px $color-primary;
+  padding: ($form-control-height - 22px) / 2 8px;
+  padding-right: 30px;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 12px;
+  &.isMini{
+    padding: 5px;
+    width: 180px;
+    border-radius: 2px;
+    input{
+      color: #434343;
+    }
+
+    > img {
+      right: 8px;
+      top: 5px;
+    }
+  }
+
+  &.open{
+    z-index: 99;
+  }
+
+  input {
+    height: 20px;
+    line-height: 20px;
+    outline: none;
+    border-radius: 4px;
+    width:100%;
+    padding: 0;
+    border: none;
+    font-size: 14px;
+
+  }
+
+  > img {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+  }
+
+
+
+  .datepicker-drop {
+    $width: 210px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    width: $width;
+    height: 250px;
+    border: solid 1px $color-primary;
+    background-color: #fff;
+    border-radius: 2px;
+    //-webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+    //box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+
+    .arrow {
+      $size: 10px;
+      position: absolute;
+      top: -($size);
+      border-bottom: solid $size $color-primary;
+      border-left: solid $size transparent;
+      border-right: solid $size transparent;
+
+      &:before {
+        content: '';
+        left: -10px;
+        position: absolute;
+        top: 1px;
+        border-bottom: solid $size #fff;
+        border-left: solid $size transparent;
+        border-right: solid $size transparent;
+      }
+    }
+    .datepicker-drop-view {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding: 10px;
+    }
+
+    .weekend {
+      > span {
+        width: $width / 7;
+        display: inline-block;
+        text-align: center;
+        padding: 7px 0;
+        cursor: default;
+        font-weight: bold;
+      }
+    }
+
+    %item {
+      cursor: default;
+      > span {
+        &:hover {
+          background-color: $border-color;
+        }
+      }
+
+      &.active > span {
+        background-color: $color-primary;
+        color: #fff;
+      }
+    }
+
+    .day-item {
+      width: $width / 7;
+      display: inline-block;
+      text-align: center;
+      height: 30px;
+      @extend %item;
+
+      > span {
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+        margin-top: 7px;
+        display: inline-block;
+        border-radius: 2px;
+      }
+
+      &.fade {
+        color: #ccc;
+      }
+    }
+
+    .month-item, .year-item {
+      width: $width / 3;
+      font-size: 14px;
+      display: inline-block;
+      text-align: center;
+      height: 50px;
+      @extend %item;
+
+      > span {
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        width: 60px;
+        border-radius: 4px;
+        margin-top: 5px;
+      }
+    }
+
+    .switcher {
+      font-size: 16px;
+      text-align: center;
+      padding-bottom: 10px;
+      > span {
+        display: inline-block;
+        border-radius: 2px;
+        padding: 0 3px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        user-select: none;
+        &:hover {
+          background-color: $border-color;
+        }
+      }
+
+      .show-value {
+        margin: 0 7px;
+      }
+    }
+  }
+  .datepicker-drop-mini {
+    $width: 179px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    width: $width;
+    height: 220px;
+    border: solid 1px $color-primary;
+    background-color: #fff;
+    border-radius: 2px;
+    //-webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+    //box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+
+    .arrow {
+      $size: 10px;
+      position: absolute;
+      top: -($size);
+      border-bottom: solid $size $color-primary;
+      border-left: solid $size transparent;
+      border-right: solid $size transparent;
+
+      &:before {
+        content: '';
+        left: -10px;
+        position: absolute;
+        top: 1px;
+        border-bottom: solid $size #fff;
+        border-left: solid $size transparent;
+        border-right: solid $size transparent;
+      }
+    }
+    .datepicker-drop-view {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding: 10px;
+    }
+
+    .weekend {
+      > span {
+        width: $width /7;
+        display: inline-block;
+        text-align: center;
+        padding: 7px 0;
+        cursor: default;
+        font-weight: bold;
+      }
+    }
+
+    %item {
+      cursor: default;
+      > span {
+        &:hover {
+          background-color: $border-color;
+        }
+      }
+
+      &.active > span {
+        background-color: $color-primary;
+        color: #fff;
+      }
+    }
+
+    .day-item {
+      width: $width / 7;
+      display: inline-block;
+      text-align: center;
+      height: 25px;
+      @extend %item;
+
+      > span {
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+        margin-top: 7px;
+        display: inline-block;
+        border-radius: 2px;
+      }
+
+      &.fade {
+        color: #ccc;
+      }
+    }
+
+    .month-item, .year-item {
+      width: $width / 3;
+      font-size: 14px;
+      display: inline-block;
+      text-align: center;
+      height: 50px;
+      @extend %item;
+
+      > span {
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        width: 60px;
+        border-radius: 4px;
+        margin-top: 5px;
+      }
+    }
+
+    .switcher {
+      font-size: 16px;
+      text-align: center;
+      padding-bottom: 10px;
+      > span {
+        display: inline-block;
+        border-radius: 2px;
+        padding: 0 3px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        user-select: none;
+        &:hover {
+          background-color: $border-color;
+        }
+      }
+
+      .show-value {
+        margin: 0 7px;
+      }
+    }
+  }
+
+
+}

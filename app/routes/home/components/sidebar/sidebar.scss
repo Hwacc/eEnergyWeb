@@ -1,0 +1,92 @@
+/**
+ * 创建于：2016-5-11
+ * 创建人：杨骐彰
+ * 说明： 主页面侧边菜单栏样式
+ */
+@import '../../../../styles/variables';
+
+//固定定位
+.sem-sidebar {
+  position: absolute;
+  width: 100%;
+/*  padding-top: 26.5px;*/
+  height: 100%;
+  left: 0;
+  right:0;
+  top: 0;
+  bottom:0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #33363f;
+  //顶部为6，要在顶部下面z-index
+  //可上下滑动
+  overflow-y: auto;
+}
+
+//菜单块
+.sem-menu-blocks {
+  z-index: 2;
+  position: relative;
+  $font-color: #CECECE;
+  .sem-blocks-wrapper {
+    display: block;
+    border-bottom: solid 1px rgba(255,255,255,.1);
+    &:first-child {
+      border-top: solid 1px rgba(255,255,255,.1);
+    }
+    .sem-menu-block {
+      position: relative;
+      width: 100%;
+      &.clicked {
+        background: #0a0a0d;
+      }
+
+      //块标题
+      .menu-title {
+        &.active {
+          color: #fff;
+        }
+        position: relative;
+        font-size: 16px;
+        color: $font-color;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 70px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        padding-top: 5px;
+
+        //菜单标题图
+        .menu-icon {
+          height: 24px;
+          width: 24px;
+          background-size: 24px 24px;
+          margin-bottom: 10px;
+          background-image: url(./electricity_d.png);
+
+          &.efficiency {
+            background-image: url(./electricity_d.png);
+          }
+          &.device {
+            background-image: url(./device_manager_d.png);
+          }
+          &.system {
+            background-image: url(./system_manager_d.png);
+          }
+          &.requirement {
+            background-image: url(./intelligent_analysis_d.png);
+          }
+        }
+        .menu-word {
+
+        }
+
+      }
+    }
+  }
+}
+

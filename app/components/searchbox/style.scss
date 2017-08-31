@@ -1,0 +1,47 @@
+/**
+ * 创建于：2016-5-18
+ * 创建人：杨骐彰
+ * 说明： 搜索框组件样式
+ */
+@import "../../styles/variables";
+
+.sem-search-box {
+  display: inline-block;
+  height: $form-control-height;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  border: solid 1px $color-primary;
+  position: relative;
+  padding:0 40px 0 19px;
+
+  &.block {
+    display: block;
+  }
+
+  input {
+    border: none;
+    background: transparent;
+    font-size: 12px;
+    line-height: (20px / 12px);
+    height: 20px;
+    padding-top: ($form-control-height - 2px - 20px)/2;
+    outline: none;
+    width: 100%;
+  }
+
+  //搜索图标
+  .search-icon {
+    $size: 16px;
+    background-image: url(./search-icon.png);
+    position: absolute;
+    height: $size;
+    width: $size;
+    right: 12px;
+    top: 50%;
+    margin-top: -$size/2;
+    background-size: $size $size;
+    cursor: pointer;
+  }
+}

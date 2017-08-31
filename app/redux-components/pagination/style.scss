@@ -1,0 +1,86 @@
+/**
+ * 创建于：2016-5-24
+ * 创建人：杨骐彰
+ * 说明： 分页组件样式
+ */
+@import "../../styles/variables";
+
+.sem-pagination {
+  display: inline-block;
+  float: right;
+
+  &.hide{
+    display: none;
+  }
+
+  %active {
+    border-color: $color-primary;
+    background-color: $color-primary;
+    color: #fff;
+  }
+
+  %base {
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    padding: 0 8px;
+    border: solid 1px #ccc;
+    margin-left: -1px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .item {
+    @extend %base;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+
+  //前进后退
+  .pre, .next {
+    @extend %base;
+    color: $color-primary;
+    border-color: $color-primary;
+    &.disabled {
+      cursor: no-drop;
+      position: relative;
+      &:after {
+        content:'';
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        background-color: rgba(255,255,255,0.25);
+      }
+    }
+  }
+
+  .pre {
+    margin-right: 10px;
+  }
+
+  .next {
+    margin-left: 10px;
+  }
+
+  .ellipsis {
+    margin: 0 5px;
+  }
+
+  //激活时
+  .item.active {
+    @extend %active;
+    position: relative;
+  }
+
+  .item:hover{
+    border-color: $color-primary;
+    position: relative;
+  }
+}

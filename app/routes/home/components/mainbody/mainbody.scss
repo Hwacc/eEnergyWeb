@@ -1,0 +1,127 @@
+/**
+ * 创建于：2016-5-12
+ * 创建人：杨骐彰
+ * 说明： 主页面内容容器样式
+ */
+@import '../../../../styles/variables';
+$middle-bar-width: 250px;
+.hidden{
+  .sem-main-body{
+    margin-left: 0;
+  }
+}
+
+.sem-main-body {
+  //margin-left: 180px;
+  //left: $sidebar-width;
+  //margin-top: $navbar-height;
+  overflow-y: scroll;
+  &.is-main{
+    .sem-main-content{
+      background-color: #f4f5f4;
+      padding: 0;
+      .sem-panel{
+        top:0;
+        position: relative;
+      }
+    }
+  }
+
+  .sem-middle-bar{
+    //flex: 0 0 250px;
+    width: 100%;
+    background: #fff;
+    bottom: 0;
+    padding: 7px;
+    z-index: $index-middlebar;
+    box-sizing: border-box;
+    left: $sidebar-width +17px;
+  }
+  .sem-has-middle-bar {
+    height: 100%;
+    //display: flex;
+    position: relative;
+    padding: 0;
+    z-index: 2;
+    .condition-button{
+      width: 100px;
+      height: 32px;
+      color: #ffffff;
+      line-height: 32px;
+      background-color: #52caff;
+      margin-top: 8px;
+    }
+  }
+  .sem-main-content {
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    box-sizing: border-box;
+    height: auto;
+    background-color: #ffffff;
+    .sem-panel{
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+//中间区域为设备地址列表时的样式
+.sem-middle-bar.device-address-list {
+  padding-top: 30px;
+  %checkbox {
+    position: absolute;
+    top: 50%;
+    margin-top: -$checkbox-size/2;
+    right: 12px;
+  }
+
+  //搜索条件间距
+  .search-condition-row {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  //面板头部的checkbox
+  .sem-panel {
+    .sem-panel-header {
+      position: relative;
+      .sem-checkbox {
+        @extend %checkbox;
+      }
+    }
+  }
+  //列表
+  .sem-list {
+    a {
+      padding: 0 40px 0 19px;
+      position: relative;
+      //checkbox右侧靠齐
+      .sem-checkbox {
+        @extend %checkbox;
+      }
+    }
+  }
+}
+
+.header-icon{
+  height: 100px;
+  width: 100%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.account-table{
+  position: relative;
+  left: 50%;
+  margin: 25px 0 0 -159px;
+  width: 318px;
+
+}

@@ -1,0 +1,147 @@
+/**
+ * 创建于：2016-5-23
+ * 创建人：杨骐彰
+ * 说明：表格样式
+ */
+@import "../../styles/variables";
+
+.sem-table {
+  min-width: 100%;
+  .th{
+    height: 18px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  &.sem-text-left {
+    th, td {
+      text-align: left;
+    }
+  }
+
+  &.sem-text-right {
+    th, td {
+      text-align: right;
+    }
+  }
+
+
+  th{
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+    &.large{
+      min-width: 103px;
+    }
+    &.min{
+      min-width: 78px;
+    }
+  }
+  th, td {
+    border-color: $border-color;
+    border-collapse: collapse;
+    text-align: center;
+    padding:0 5px;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-transition: background .3s ease;
+    transition: background .3s ease;
+    .td{
+      min-width: 50px;
+      &.min{
+        min-width: 78px;
+      }
+      &.large{
+        min-width: 103px;
+      }
+    }
+
+    .sem-checkbox {
+      margin-right: 15px;
+      margin-top: -2px;
+    }
+    .sem-sort:hover{
+      cursor: pointer;
+    }
+    .order-img{
+      height: 14px;
+      width: 14px;
+      display: inline-block;
+      vertical-align: text-bottom;
+    }
+
+  }
+
+  tr:first-of-type {
+    td, th {
+      border-top: none;
+    }
+  }
+
+/*  tr:last-of-type {
+    td {
+      border-bottom: none;
+    }
+  }*/
+
+  td:first-of-type, th:first-of-type {
+    border-left: none;
+  }
+
+  td:last-of-type, th:last-of-type {
+    border-right: none;
+  }
+
+  th {
+    background-color: #faecd0;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  //鼠标悬停效果
+  &.sem-table-hoverable {
+    tr:hover {
+      td {
+        background-color: #f8f8f8 !important;
+      }
+    }
+  }
+
+  //背景色交错
+  &.sem-table-stripped {
+    tr:nth-of-type(2n) {
+      td {
+        background-color: #f4f5f4;
+      }
+    }
+  }
+
+  &.sem-table-noborder {
+    th, td {
+      border: none;
+    }
+  }
+
+  //有外边框
+  &.sem-table-bordered {
+    border: solid 1px $border-color;
+  }
+
+  .sem-table-operate {
+    margin: 0 20px;
+    color: $color-primary;
+    display: inline-block;
+    white-space: nowrap;
+    &.disabled{
+      color: #dfdfdf;
+    }
+    img {
+      margin-right: 5px;
+      vertical-align: middle;
+      margin-top: -2px;
+    }
+  }
+}
+

@@ -1,0 +1,110 @@
+/**
+ * 创建于：2016-5-11
+ * 创建人：杨骐彰
+ * 说明： 主页面页面顶部样式
+ */
+
+@import '../../../../styles/variables';
+
+
+//顶部导航栏
+.sem-navbar {
+  height: $navbar-height;
+  background-color: $color-primary;
+  position: fixed;
+  width: 100%;
+  z-index: $index-navbar;
+  top:0;
+
+  .brand {
+    height: $navbar-height;
+    line-height: $navbar-height;
+    float: left;
+    padding-left: 10px;
+    .name{
+      font-size: 16px;
+      color: #fff;
+      display: inline;
+      vertical-align: middle;
+    }
+    .icon {
+      height: 26px;
+      width: 26px;
+      vertical-align: middle;
+      display: inline;
+      margin-right: 10px;
+
+
+
+    }
+    .icon-text{
+      height: 32px;
+      width: 220px;
+      vertical-align: middle;
+      margin-top: 11px;
+    }
+
+  }
+
+  //右侧导航条
+  ul.nav {
+    float: right;
+    height: $navbar-height;
+    list-style: none;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    li {
+      height: 100%;
+      width: 35px;
+      float: left;
+      font-size: 14px;
+      line-height: $navbar-height;
+      -webkit-transition: all .3s ease;
+      transition: all .3s ease;
+      a{
+        display: block;
+        height: 100%;
+        text-align: center;
+        width: 135px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+      }
+      img.icon {
+        height: 16px;
+        width: 16px;
+        margin-right: 10px;
+        vertical-align: middle;
+        margin-top: -4px;
+        &.little{
+          height: 14px;
+          width: 14px;
+        }
+      }
+
+      &:hover{
+        background-color: #75d5ff;
+      }
+    }
+
+    //分割线
+    li.split {
+      width: 4px;
+      background: url(./dividing_line_v.png);
+      background-size: 4px 100%;
+    }
+
+    //用户li样式
+    li.user {
+    }
+
+    //退出li样式
+    li.logout {
+      text-align: center;
+      img.icon {
+      }
+    }
+  }
+}

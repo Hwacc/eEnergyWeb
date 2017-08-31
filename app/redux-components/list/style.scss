@@ -1,0 +1,50 @@
+/**
+ * 创建于：2016-5-18
+ * 创建人：杨骐彰
+ * 说明： 列表组件样式
+ */
+@import "../../styles/variables";
+
+//列表
+.sem-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  //列表项
+  .sem-list-item {
+    padding: 5px 0;
+    line-height: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: solid 1px $border-color;
+    &.active {
+      background-color: $color-info;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    //链接
+    >a{
+      height:100%;
+      display: block;
+      padding:0 8px;
+    }
+  }
+
+  //边框
+  &.bordered {
+    border: solid 1px $border-color;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+  }
+
+  //交错效果
+  &.sem-list-striped {
+    .sem-list-item:nth-of-type(2n) {
+      background-color: #dfdfdf;
+    }
+  }
+}

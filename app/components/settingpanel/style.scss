@@ -1,0 +1,27 @@
+.panel-parent{
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid#dfdfdf;
+  height: 186px;
+  .panel-temperature{
+    flex: 1;
+    -webkit-flex: 1;
+    width: 170px;
+    box-sizing: border-box;
+    background-color: #fff; }
+  .panel-func{
+    width: 87px;
+    box-sizing: border-box;
+    border-right: 1px solid#dfdfdf;
+  }
+  .panel-airspeed{
+    width: 150px;
+    box-sizing: border-box;
+    border-left: 1px solid#dfdfdf;
+    background-color: #fff;
+  }
+
+
+}

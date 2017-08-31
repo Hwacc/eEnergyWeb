@@ -1,0 +1,49 @@
+/**
+ * 创建于：6/7/16
+ * 创建人：qizhang
+ */
+
+
+.fade-scale-enter {
+  opacity: 0.01;
+  transform: scale(.2);
+}
+
+.fade-scale-enter.fade-scale-enter-active {
+  opacity: 1;
+  transition: all 300ms ease-in;
+  transform: scale(1);
+}
+
+.fade-scale-leave {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-scale-leave.fade-scale-leave-active {
+  opacity: 0.01;
+  transition: all 300ms ease-in;
+  transform: scale(.2);
+}
+
+.fade-slide-enter {
+  opacity: 0.01;
+  transform: translateY(-20%);
+}
+
+.fade-slide-enter.fade-slide-enter-active {
+  opacity: 1;
+  transition: all 300ms ease;
+  transform: translateY(0);
+}
+
+.fade-slide-leave {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-slide-leave.fade-slide-leave-active {
+  opacity: 0.01;
+  transition: all 300ms ease;
+  transform: translateY(-20%);
+}

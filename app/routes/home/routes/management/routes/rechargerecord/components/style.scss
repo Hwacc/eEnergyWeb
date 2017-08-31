@@ -1,0 +1,38 @@
+.sem-has-middle-bar{
+  .search{
+    .condition-search{
+      max-width:130px
+    }
+    td{
+      font-size: 14px;
+      padding: 8px 0;
+
+    }
+  }
+  .condition-button{
+    width: 100px;
+    height: 32px;
+    color: #ffffff;
+  }
+  &.group{
+    .sem-main-content{
+      border:1px solid#dfdfdf;
+      .add-button-center{
+        position: absolute;
+        width: 230px;
+        top: 90% ;
+        left: 50%;
+        margin-left: -115px;
+        text-align: center;
+      }
+    }
+    .sem-panel {
+      -webkit-border-radius: 5px 5px 0 0;
+      border-radius: 5px 5px 0 0;
+      background-color: #fff;
+      position: relative;
+      border: 0;
+    }
+  }
+
+}

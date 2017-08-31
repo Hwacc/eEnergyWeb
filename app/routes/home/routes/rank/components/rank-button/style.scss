@@ -1,0 +1,20 @@
+.rank-button{
+  display: inline-block;
+  position: absolute;
+  height: 34px;
+  top: 0;
+  right: 2px;
+  >div{
+    height: 12px;
+    margin-top: 9px;
+    width: 12px;
+    background-size: cover;
+    background-position: center;
+  }
+  >div:hover{
+    cursor: pointer;
+  }
+  >div:last-child{
+    margin-top: 0px;
+  }
+}

@@ -1,0 +1,41 @@
+.temperature{
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 72px;
+  .left{
+    width: 20px;
+    margin-left: 20px;
+  }
+  .right{
+    width: 20px;
+    margin-right: 20px;
+  }
+
+  /*箭头向左*/
+  .arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #a8e4ff;
+    margin-top: 7px;
+    cursor: pointer;
+  }
+  /*箭头向右*/
+  .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid #a8e4ff;
+    margin-top: 7px;
+    cursor: pointer;
+  }
+  .temperature-value{
+    font-size: 32px;
+    color: #000000;
+    text-align: center;
+    -webkit-box-flex: 1;
+    width: 100%;
+  }
+}

@@ -1,0 +1,28 @@
+.switch-background {
+  width: 80px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #A8E5FF;
+  position: relative; }
+  .switch-background .switch-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    position: absolute;
+    transition-duration: 500ms; }
+
+.switch-background.right {
+  background-color: #A8E5FF;
+  border: 1px solid #a8efff; }
+  .switch-background.right .switch-button {
+    transform: translateX(48px); }
+
+.switch-background.left {
+  background-color: #dfdfdf;
+  border: 1px solid #dfdfdf; }
+  .switch-background.left .switch-button {
+    transform: translateX(0); }
+
+/*# sourceMappingURL=style.css.map */

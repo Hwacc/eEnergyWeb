@@ -1,0 +1,25 @@
+.panel-parent {
+  display: -webkit-box;
+  display: box;
+  width: 452px;
+  display: -moz-box;
+  box-sizing: border-box;
+  border: 1px solid #dfdfdf;
+  height: 186px; }
+  .panel-parent .panel-temperature {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    flex: 1;
+    box-sizing: border-box;
+    background-color: #fff; }
+  .panel-parent .panel-func {
+    width: 86px;
+    box-sizing: border-box;
+    border-right: 1px solid #dfdfdf; }
+  .panel-parent .panel-airspeed {
+    width: 150px;
+    box-sizing: border-box;
+    border-left: 1px solid #dfdfdf;
+    background-color: #fff; }
+
+/*# sourceMappingURL=style.css.map */

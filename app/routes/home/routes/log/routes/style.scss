@@ -1,0 +1,42 @@
+.sem-has-middle-bar{
+  .search{
+    .condition-search{
+      max-width:130px
+    }
+    td{
+      font-size: 14px;
+      padding: 8px 0;
+
+    }
+  }
+  .condition-button{
+    width: 100px;
+    height: 32px;
+    color: #ffffff;
+  }
+  &.community{
+    .sem-main-content{
+      border:1px solid#dfdfdf;
+      .add-button-center{
+        position: absolute;
+        width: 150px;
+        top: 110%;
+        right: 50%;
+        margin-left: -50px;
+        text-align: center;
+      }
+      .add-button-center:last-child{
+        margin-left: 0;
+        margin-right: -50px;
+        left: 50%
+      }
+    }
+    .sem-panel {
+      -webkit-border-radius: 5px 5px 0 0;
+      border-radius: 5px 5px 0 0;
+      background-color: #fff;
+      position: relative;
+      border: 0;
+    }
+  }
+}

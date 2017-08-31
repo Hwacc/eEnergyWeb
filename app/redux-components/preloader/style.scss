@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+.pre-loader {
+  display: none !important;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  color:$color-primary;
+  font-size: 12px;
+  &.show {
+    display: block !important;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  .message {
+    margin-top: 10px;
+  }
+
+  &.align {
+    position: absolute;
+    width: 100%;
+    top:50%;
+    left:0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}

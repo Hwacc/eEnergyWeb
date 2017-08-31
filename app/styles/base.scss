@@ -1,0 +1,93 @@
+/**
+ * 创建于：5/23/16
+ * 创建人：qizhang
+ */
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: $bg-color;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+a:visited, a:link, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.distanceX {
+  margin-right: 10px;
+}
+
+.distanceY {
+  margin-bottom: 10px;
+}
+
+.distanceXY {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+::-webkit-input-placeholder {
+  color: #a9a9a9;
+}
+
+:-ms-input-placeholder {
+  color: #a9a9a9;
+}
+
+input::-moz-placeholder {
+  color: darken(#a9a9a9, 29%);
+}
+
+input:-moz-placeholder {
+  color: darken(#a9a9a9, 29%);
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 1em 0;
+}
+
+h4, h5 {
+  font-weight: 400;
+}
+
+h4{
+  font-size: 14px;
+}
+
+h5{
+  font-size: 12px;
+}
+
+.online-color {
+  color: #01d848;
+}
+
+.offline-color {
+  color: #FF0000;
+}
+
+.clear-fix {
+  @include clear-fix;
+}

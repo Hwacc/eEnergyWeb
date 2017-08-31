@@ -1,0 +1,47 @@
+.switch-background{
+  width: 48px;
+  height: 20px;
+  border-radius: 16px;
+  background-color: #A8E5FF;
+  position: relative;
+  &.bigger{
+    width: 60px;
+    height: 30px;
+  }
+  .switch-button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    position: absolute;
+    transition-duration: 500ms;
+    &.bigger{
+      width: 26px;
+      height: 26px;
+      position: relative;
+      top: 2px;
+      left: 2px;
+    }
+  }
+}
+.switch-background.right{
+  background-color: #A8E5FF;
+  border: 1px solid#a8efff;
+  &.bigger{
+    background-color: #52caff;
+    .switch-button{
+      transform: translateX(0px)
+    }
+  }
+  .switch-button{
+  transform: translateX(0px)
+  }
+}
+.switch-background.left{
+  background-color: #dfdfdf;
+  border: 1px solid#dfdfdf;
+  .switch-button{
+  transform: translateX(0)
+  }
+}

@@ -1,0 +1,52 @@
+
+.condition-wrapper{
+  height: inherit;
+  width: inherit;
+  position: relative;
+  transition:all .8s ease;
+  .condition-tool{
+    display: none;
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    right: 0;
+    z-index: 6;
+    transition:all .2s ease;
+  }
+  .sem-middle-bar{
+    overflow: visible;
+    width: 100%;
+    &.search-condition{
+      top:69px;
+      padding: 0;
+      border: 1px solid#dfdfdf;
+      >div:nth-child(2){
+        height: auto;
+      }
+      transition:height 0.5s ease 0ms,width 0.5s ease 0ms;
+      .group-condition-wrapper{
+        padding: 0 0 5px 0;
+      }
+    }
+  }
+  .search-condition-children{
+    box-sizing: border-box;
+    .condition-title{
+      font-size: 16px;
+      color: #434343;
+      border-bottom:1px solid#dfdfdf;
+      font-weight: 600;
+    }
+    .condition-body{
+      box-sizing: border-box;
+      padding: 10px 9px 0 9px;
+      height: 100%;
+
+      td{
+        font-size: 14px;
+        padding: 4px 0;
+      }
+    }
+
+  }
+}

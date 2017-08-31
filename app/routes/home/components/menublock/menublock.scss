@@ -1,0 +1,79 @@
+/**
+ * 创建于：2016-5-11
+ * 创建人：杨骐彰
+ * 说明： 主页面侧边菜单栏样式
+ */
+@import '../../../../styles/variables';
+.menu-block {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  //菜单列表
+  .menu-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 60px;
+    position: relative;
+    z-index: $index-menubar;
+    li {
+      position: relative;
+      display: inline-block;
+      $first-top: 7px;
+      text-align: center;
+      width: 150px;
+      margin: 9px 0;
+      border-top: 1px solid $color-primary;
+      border-bottom: 1px solid $color-primary;
+      border-left: 1px solid $color-primary;
+      a {
+        position: relative;
+        display: block;
+        color: $color-primary;
+        font-size: 16px;
+        line-height:40px;
+
+        /* &:hover {
+           color:#ccc;
+         }*/
+
+        &.active {
+          color: #fff;
+          background-color: $color-primary;
+          span{
+            position: absolute;
+            top: 40px;
+            left: 70px;
+            border-top: 10px solid  $color-primary;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+          }
+        }
+
+      }
+
+
+
+      &:first-child{
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+      }
+      &:last-child{
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-right: 1px solid $color-primary;
+      }
+
+      &:first-child a:before {
+        top: $first-top;
+
+      }
+
+      &:last-child a:before {
+        bottom: 24px + $first-top;
+      }
+    }
+
+  }
+}

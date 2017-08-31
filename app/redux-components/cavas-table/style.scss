@@ -1,0 +1,17 @@
+.canvas-table{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  .title{
+    height:22px;
+    background-color:#FFE4AA;
+    text-align: center;
+    padding: 10px 0;
+    border: solid 1px #dfdfdf;
+    border-bottom: 0;
+    font-weight: 600;
+  }
+  .table-chart{
+    height: 90%;
+  }
+}
