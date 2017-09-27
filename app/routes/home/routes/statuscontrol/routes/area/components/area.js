@@ -362,7 +362,7 @@ class Area extends BaseComponent {
             })
             .catch((err)=> {
                 if (!err.abort) {
-                    alert(err.message);
+                    alert(err.msg);
                     this.setState({
                         isSavingChange: false
                     });
@@ -429,7 +429,7 @@ class Area extends BaseComponent {
             })
             .catch((err)=> {
                 if (!err.abort) {
-                    alert(err.message);
+                    alert(err.msg);
                     this.setState({
                         isLoadingGroup:false
                     })
@@ -461,43 +461,62 @@ class Area extends BaseComponent {
 
 
     //控制
-    switchHandle(id,status,type){
-        let postData = {
-            DeviceIds: [id],
-            DeviceOn: !status
+    switchHandle(id,status,controlStr,type){
+        let postData
+        if(controlStr){
+            postData = {
+                DeviceIds: [id],
+                DeviceOn: !status,
+                ControlStr:controlStr
+            }
+        }else {
+             postData = {
+                DeviceIds: [id],
+                DeviceOn: !status
+            }
         }
+
         modalLoading({loadingContent:"正在保存修改",key:'save'});
         this.deviceControlRP&&this.deviceControlRP.request.abort();
         this.deviceControlRP = apis.device.controlDevice(postData);
         this.deviceControlRP.promise
-            .then((res)=>{
+            .then((dres)=>{
                 this.controlT = setTimeout(
                     ()=>{
                         this.waiteTaskRP&&this.waiteTaskRP.request.abort();
-                        this.waiteTaskRP = apis.device.WaitResult(res.Data.Id);
+                        this.waiteTaskRP = apis.device.WaitResult(dres.Data.Id);
                         this.waiteTaskRP.promise.then((res)=>{
-                            if(res.Data.State != 0){
-                                this.afterControl(id,status,type);
+                            if(res.Data.State === 1){
+                                this.afterControl(id,status,controlStr,type);
                             }else{
-                                this.switchHandle(id,status,type);
+                                switch (res.Data.State){
+                                    case 0:
+                                        alert("任务进行中");
+                                        closeLoading('save');
+                                        break;
+                                    case 5:
+                                        alert("设备离线");
+                                        clearTimeout(this.controlT);
+                                        closeLoading('save');
+                                        break;
+                                }
                             }
                         })
                     }
-                    ,1000
+                    ,3000
                 )
             })
             .catch((err)=>{
                 if (!err.abort) {
-                    alert(err.message);
+                    alert(err.msg);
                 }
             })
             .done(()=> {
             })
-
     }
 
     //控制后
-    afterControl(id,status,type){
+    afterControl(id,status,controlStr,type){
         const {sns,selectStates,currentGroupId} = this.state;
         this.deviceRP && this.deviceRP.request.abort();
         this.setState({
@@ -522,9 +541,15 @@ class Area extends BaseComponent {
                     t.DeviceStates.some(d=> {
                         if (d.Id == id) {
                             d.DeviceCapacities.map(m=>{
-                                if (m.PowerOn === !status&&m.Type==type) {
-                                    isSuccess = true
-                                    return m.PowerOn === !status
+                                if(type == 0 || type == 1){
+                                    if (m.PowerOn === !status&&m.Type==type) {
+                                        isSuccess = true
+                                        return m.PowerOn === !status
+                                    }
+                                }else if(type == 2){
+                                    if(m.LastInst === controlStr){
+                                        isSuccess = true
+                                    }
                                 }
                             })
                         } else {
@@ -545,10 +570,9 @@ class Area extends BaseComponent {
                     isShowControl:false
                 });
             })
-
             .catch((err)=> {
                 if (!err.abort) {
-                    alert(err.message);
+                    alert(err.msg);
                     this.setState({
                         isLoadingDeviceList: false,
                         deviceList: null
@@ -605,7 +629,7 @@ class Area extends BaseComponent {
                 if (!err.abort) {
                     deviceList[localFirst]['isLoading'] = false;
                     deviceList[localFirst]['isFail'] = true;
-                    alert(err.message)
+                    alert(err.msg)
                     this.setState({
                         deviceList:deviceList
                     })
@@ -643,7 +667,7 @@ class Area extends BaseComponent {
             .catch((err) => {
                 if (!err.abort) {
                     deviceList[localFirst]['isLoading'] = false
-                    alert(err.message)
+                    alert(err.msg)
                     this.setState({
                         deviceList:deviceList
                     })
@@ -747,7 +771,7 @@ class Area extends BaseComponent {
                     <div className="sem-air-control-wrapper">
 
                                     <AirControl data={deviceList}  createUploadTask={(id)=>this.createUploadTask(id)}
-                                                switchHandle={(id,status,type)=>this.switchHandle(id,status,type)}
+                                                switchHandle={(id,status,type)=>this.switchHandle(id,status,null,type)}
                                                 onChange={(id,data)=>{this.setState({controlId:id,controlData:data,isShowControl:true})}}
                                                 showSwitch={(a,b,c)=>this.setState({isShowSwitchControlModal: true,controlId:a,switchStatus:b,switchType:c})}
                                     >
@@ -759,7 +783,7 @@ class Area extends BaseComponent {
 
                     isShowControl&&<ControlModal ids={controlId}
                                                  data = {controlData}
-                                                 switchHandle={(id,status)=>{this.switchHandle(id,status)}}
+                                                 switchHandle={(id,status,controlStr,type)=>{this.switchHandle(id,status,controlStr,type)}}
                                                  onChange={(e)=>this.onChangeStatus(e)}
                                                  hideEditModal={()=>this.setState({isShowControl:false})}/>
                 }
@@ -770,7 +794,7 @@ class Area extends BaseComponent {
                     isShowSwitchControlModal&&<SwitchControlModal ids={controlId} 
                                                                   status={switchStatus}
                                                                   type={switchType} 
-                                                                  switchHandle={(id,status,type)=>{this.switchHandle(id,status,type);
+                                                                  switchHandle={(id,status,type)=>{this.switchHandle(id,status,null,type);
                                                                   this.setState({isShowSwitchControlModal:false})}}
                                                                   hideEditModal={()=>this.setState({isShowSwitchControlModal:false})}/>
                 }

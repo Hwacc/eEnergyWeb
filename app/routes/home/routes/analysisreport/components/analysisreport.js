@@ -144,7 +144,7 @@ export default class AnalysisReport extends BaseComponent {
                 this.setState({
                     isLoadingTendency:false
                 })
-                alert(err.message);
+                alert(err.msg);
             }
         })
     }
@@ -212,7 +212,7 @@ export default class AnalysisReport extends BaseComponent {
             })
             .catch((err) => {
                 if (!err.abort) {
-                    alert(err.message);
+                    alert(err.msg);
                     this.setState({
                         isLoadingGroup: false
                     })
@@ -358,7 +358,7 @@ export default class AnalysisReport extends BaseComponent {
                     this.setState({
                         isLoadingChildRank: false
                     });
-                    alert(err.message);
+                    alert(err.msg);
                 }
             });
     }
@@ -400,7 +400,7 @@ export default class AnalysisReport extends BaseComponent {
                     this.setState({
                         isLoadingRank: false
                     })
-                    alert(err.message)
+                    alert(err.msg)
                 }
             })
     }
@@ -451,7 +451,7 @@ export default class AnalysisReport extends BaseComponent {
                         isLoadingLog:false,
                         logData: []
                     })
-                    alert(err.message)
+                    alert(err.msg)
                 }
 
             })
@@ -607,7 +607,7 @@ export default class AnalysisReport extends BaseComponent {
                     compareDataCompute:[],
                     compareData:[]
                 });
-                alert(err.message);
+                alert(err.msg);
             }
         });
 

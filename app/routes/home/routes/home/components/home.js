@@ -144,11 +144,11 @@ class HomePage extends BaseComponent{
                         this.setState({
                             isLoadingLoss:false
                         });
-                        alert(err.message);
+                        alert(err.msg);
                     }
                 })
         }).catch((err)=>{
-            alert(err.message);
+            alert(err.msg);
         });
 
     }
@@ -195,7 +195,7 @@ class HomePage extends BaseComponent{
                 this.setState({
                     isLoadingWeatherDetail:false
                 });
-                alert(err.message);
+                alert(err.msg);
             }
         })
 
@@ -273,7 +273,7 @@ class HomePage extends BaseComponent{
                 this.setState({
                     isLoadingTendency:false
                 });
-                alert(err.message);
+                alert(err.msg);
             }
         })
     }
@@ -321,7 +321,7 @@ class HomePage extends BaseComponent{
                     isLoadingTendency:false
 
                 });
-                alert(err.message);
+                alert(err.msg);
             }
         })
     }
@@ -389,7 +389,7 @@ class HomePage extends BaseComponent{
 
             .catch((err)=>{
                 if(!err.abort){
-                    alert(err.message);
+                    alert(err.msg);
                     this.setState({
                         isLoadingWeather:false
                     })

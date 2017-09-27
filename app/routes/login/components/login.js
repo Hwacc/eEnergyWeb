@@ -94,7 +94,7 @@ class Login extends Component {
                                     <CheckBox className='login-checkbox'  checked={checked}
                                               onClick={()=>this.setState({checked:!checked})}/>
                                     <label className="login-checkbox-label">记住密码</label>
-                                    <Link to='#' activeClassName="active" className="login-link">忘记密码?</Link>
+                                    {/*<Link  activeClassName="active" className="login-link" onClick={()=>{}}>忘记密码?</Link>*/}
                                 </div>
                                 <button className="login-btn" onClick={()=>{!isLogining&&this.submit()}}>
                                     {isLogining?'登录中':'登录'}</button>

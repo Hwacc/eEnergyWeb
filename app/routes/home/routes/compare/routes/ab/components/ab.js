@@ -151,7 +151,7 @@ class AB extends BaseComponent {
             })
             .catch(err => {
                 if (!err.abort) {
-                    alert(err.message);
+                    alert(err.msg);
                     this.setState({
                         deviceList: [],
                         isLoadingDeviceList:false
@@ -246,7 +246,7 @@ class AB extends BaseComponent {
                 })
                 .catch(err => {
                     if (!err.abort) {
-                        alert(err.message);
+                        alert(err.msg);
                         this.setState({
                             isLoadingDevicesChangeInfo:false,
                             isLoadingDeviceDetailList:false,
@@ -304,7 +304,7 @@ class AB extends BaseComponent {
             })
             .catch((err)=> {
                 if (!err.abort) {
-                    alert(err.message);
+                    alert(err.msg);
                     this.setState({
                         isLoadingGroup:false
                     })

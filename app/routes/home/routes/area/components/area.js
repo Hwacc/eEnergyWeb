@@ -215,7 +215,7 @@ export default class Area extends BaseComponent {
             })
             .catch((err) => {
                 if (!err.abort) {
-                    alert(err.message);
+                    alert(err.msg);
                     this.setState({
                         isLoadingGroup: false
                     })
@@ -370,7 +370,7 @@ export default class Area extends BaseComponent {
                     this.setState({
                         isLoadingHistoryData: false
                     });
-                    alert(err.message);
+                    alert(err.msg);
                 }
             });
     }
@@ -407,7 +407,7 @@ export default class Area extends BaseComponent {
                     this.setState({
                         isLoadingChildRank: false
                     });
-                    alert(err.message);
+                    alert(err.msg);
                 }
             });
     }
@@ -443,7 +443,7 @@ export default class Area extends BaseComponent {
                     this.setState({
                         isLoadingMultiTotal: false
                     });
-                    alert(err.message);
+                    alert(err.msg);
                 }
             });
     }
@@ -555,7 +555,7 @@ export default class Area extends BaseComponent {
                 this.setState({
                     isLoadingCompare: false
                 });
-                alert(err.message);
+                alert(err.msg);
             }
         });
 

@@ -10,7 +10,6 @@ import apis from 'apis'
 import Button from 'button'
 import Switch from 'switch'
 import Panel from 'settingpanel'
-import * as staticType from 'utils/staticType'
 
 export default class ControlModal extends BaseComponent{
     constructor(props){
@@ -31,7 +30,16 @@ export default class ControlModal extends BaseComponent{
     //初始化面板数据
     getEditableData(data){
         if (data) {
-            let code = data.split('');
+            let codeData;
+            data.DeviceCapacities.some((d)=>{
+                if(d.LastInst){
+                    codeData = d.LastInst;
+                    return true;
+                }else{
+                    this.getEditableData(null);
+                }
+            });
+            let code = codeData.split('');
             return {
                 switchs: code[0] || 0,
                 typeControl: code[1] || 0,
@@ -42,9 +50,9 @@ export default class ControlModal extends BaseComponent{
         }
         //
         else {
-            var now = new Date();
-            var month = now.getMonth()+1;
-            var initData = {
+            let now = new Date();
+            let month = now.getMonth()+1;
+            let initData = {
                 summer:{
                     switchs:1,
                     typeControl:1,
@@ -139,7 +147,6 @@ export default class ControlModal extends BaseComponent{
     //保存
     savingChange(){
         let data = this.state.editableData;
-
         let ids = this.props.ids;
         let temperature = data.temperature-16<16?'0'+(data.temperature-16).toString(16):(data.temperature-16).toString(16);
         let num = data.switchs.toString()+data.typeControl.toString()+
@@ -148,7 +155,6 @@ export default class ControlModal extends BaseComponent{
         let postData = {
             DeviceIds:[ids],
             ControlStr: num,
-
         };
         Modal.loading ("正在保存修改")
         this.deviceControlRP&&this.deviceControlRP.request.abort();
@@ -171,7 +177,20 @@ export default class ControlModal extends BaseComponent{
     render(){
         const {editableData,isSave,isLoading,
             isLoadingFailed,loadingFailedText,detailInfo,isShow,powerStatus}=this.state
-        const {hideEditModal} = this.props;
+        const {hideEditModal,switchHandle} = this.props;
+
+
+        let ids = this.props.ids;
+        let temperature = editableData.temperature-16<16?'0'+(editableData.temperature-16).toString(16).toUpperCase()
+            :(editableData.temperature-16).toString(16).toUpperCase();
+        let num = editableData.switchs.toString()+editableData.typeControl.toString()+
+            temperature+editableData.windSpeed.toString()
+            +editableData.windDirection.toString()+'0';
+        let postData = {
+            DeviceIds:[ids],
+            ControlStr: num,
+        };
+
         return(
             <Modal show={isShow} >
                 <Modal.Header text = "远程控制" onClose={hideEditModal}/>
@@ -196,7 +215,7 @@ export default class ControlModal extends BaseComponent{
                         <Button size="thin" type="outline" style={{width:100,marginRight:50}}
                                 onClick={hideEditModal}>取消
                         </Button>
-                        <Button size="thin" style={{width:100}} onClick={()=>{this.savingChange()}}>保存</Button>
+                        <Button size="thin" style={{width:100}} onClick={()=>{switchHandle(ids,null,num,2)}}>保存</Button>
                     </div>
 
                 </Modal.Content>

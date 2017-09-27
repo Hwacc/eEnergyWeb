@@ -24,7 +24,7 @@ const AirControl =(props)=> {
     }
     return (
         <div className="sem-air-control" style={{order:order}}>
-{/*            <div className="sem-air-control-title">
+{/*        <div className="sem-air-control-title">
                 {data.GroupId?data.GroupName:store.get('deviceTypeName')}({data.TotalPower?data.TotalPower:0}kWh)
             </div>*/}
             <div className="sem-air-control-content">
@@ -71,7 +71,7 @@ const AirControl =(props)=> {
                                                     }
                                                 </Button>
                                                 <Button type="thin" order="2" className="btn little"
-                                                        onClick={control.IsOnline>0?()=>onChange(t.Id):()=>{alert('设备离线')}}>控制设备</Button>
+                                                        onClick={control.IsOnline>0?()=>onChange(t.Id,t):()=>{alert('设备离线')}}>控制设备</Button>
                                                 {/*<Button  type="thin" className="btn little" order="3" onClick={sw.IsOnline>0? ()=>showSwitch(t.Id, sw.PowerOn,sw.Type) : ()=>alert('设备离线')}>控制开关</Button>*/}
                                             </div>
                                             :
@@ -97,7 +97,7 @@ const AirControl =(props)=> {
                                                         }
                                                         if(m.Type ==staticType.capacityType.control){
                                                             return(
-                                                                <Button type="thin" order="2" className="btn left" onClick={m.IsOnline>0? ()=>onChange(t.Id) : ()=>alert('设备离线')}>控制设备</Button>
+                                                                <Button type="thin" order="2" className="btn left" onClick={m.IsOnline>0? ()=>onChange(t.Id,t) : ()=>alert('设备离线')}>控制设备</Button>
                                                             )
                                                         }
                                                     })
